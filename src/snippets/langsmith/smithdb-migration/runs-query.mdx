@@ -112,6 +112,10 @@ Query runs from a project with optional filtering and field projection. Returns 
     | Before | After |
     |--------|-------|
     | `client.list_runs()` | `client.runs.query()` |
+
+    <Note>
+    `client.runs.query()` is now async. Call it with `await`.
+    </Note>
   </Tab>
   <Tab title="TypeScript">
     | Before | After |
@@ -616,8 +620,6 @@ Query runs from a project with optional filtering and field projection. Returns 
 <Tabs>
   <Tab title="Python">
     `runs.query` does not accept a project name directly. Resolve the project UUID with `client.aread_project()` first, then pass it as a string in `project_ids`.
-
-    <Note>Requires `langsmith>=0.9.8`.</Note>
 
 <Tabs sync={false}>
   <Tab title="Before">
